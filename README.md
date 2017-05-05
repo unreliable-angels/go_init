@@ -12,7 +12,7 @@ Initialize Go environment along with setting GOPATH.
 $ fisher unreliable-angels/go_init
 ```
 
-## Customize
+## Customization
 
 Change your `GOPATH` location by overwriting `GOPATH` universal variable:
 
