@@ -13,7 +13,7 @@ function go_init -d 'Initialize Go environment along with setting GOPATH'
         set -l default_location "$HOME/go"
         echo $filename: (set_color yellow)GOPATH is not set.(set_color normal)
         echo $filename: (set_color green)Setting GOPATH to the default location [$default_location](set_color normal)
-        set -U GOPATH $default_location
+        set -gx GOPATH $default_location
     end
 
     if not test -d "$GOPATH"
@@ -23,7 +23,7 @@ function go_init -d 'Initialize Go environment along with setting GOPATH'
 
     for path in "$GOPATH" "$GOPATH/bin"
     	if not contains "$path" $fish_user_paths
-            set -U fish_user_paths "$path" $fish_user_paths
+            set -g fish_user_paths "$path" $fish_user_paths
     	end
     end
 end
