@@ -1,5 +1,5 @@
 function go_init -d 'Initialize Go environment along with setting GOPATH'
-    type go >/dev/null ^/dev/null
+    type go >/dev/null 2>&1
     set -l rc $status
 
     set -l filename (basename (status -f))
